@@ -1,0 +1,40 @@
+#Get user to input a valid number
+print("Loading Decimal to Binary Calculator...")
+print()
+user=-1
+while user<0:
+    user=int(input("Enter a number greater than or equal to 0: "))
+    if user<0:
+        print("Invalid, try again.")
+    else:
+        print()
+
+#Some math and variables:
+
+#Saving original input for the final answer
+og_user = user
+#Remainder
+math1 = user % 2
+#Answer after division
+math2 = user // 2
+#Starting the binary code
+binary = ""
+
+#Get! That! Binary!!!!!!
+while math2 >= 1:
+    if math1 >= 1:
+        binary = str(1) + binary
+        math2 = user // 2
+        print(user, "/ 2 =", math2, "  --- remainder:", math1, "  --- binary:", binary)
+        user = math2
+        math1 = user % 2
+    else:
+        binary = str(0) + binary
+        math2 = user // 2
+        print(user, "/ 2 =", math2, "  --- remainder:", math1, "  --- binary:", binary)
+        user = math2
+        math1 = user % 2
+
+#Outcome
+print()
+print(og_user, "in binary is:", binary)
